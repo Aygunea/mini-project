@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"
         integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Document</title>
 </head>
 
@@ -19,13 +20,23 @@
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html">Logo</a>
+                <a href="index.html">
+                    <img src="/assets/images/logo-01.png.webp" alt="">
+                </a>
+                <ul class="menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
             </div>
             <div class="nav-end">
-                <button id="whislist"><i class="fa-solid fa-heart"></i></button>
+                <i class="fa-solid fa-magnifying-glass"></i>
                 <div class="cart">
                     <div class="cart-box">
-                        <i class="fa-solid fa-basket-shopping"></i>
+                        <i class="fa-solid fa-cart-shopping"></i>
                         <span id="cart-count">0</span>
                     </div>
                     <div id="dropdown-cart">
@@ -44,12 +55,92 @@
 
                     </div>
                 </div>
+                <button id="whislist"><i class="fa-regular fa-heart"></i></button>
+                <div class="slicknav-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
+            
         </nav>
     </header>
-    <section class="products">
-        <div class="card" data-id="1">
-            <img src="/images/Palermo.avif" alt="">
+    <section id="slider">
+        <div class="slider-container">
+            <div class="slides">
+                <div class="slide" style="background-image: url('/assets/images/slide-01.jpg.webp');">
+                    <div class="container">
+                        <span>Women Collection 2018</span>
+                        <h1>New Season</h1>
+                        <button class="btn-blue">Show Now</button>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('/assets/images/slide-02.jpg.webp');">
+                    <div class="container">
+                        <span>Men New- Season</span>
+                        <h1>Jackets & Coats</h1>
+                        <button class="btn-blue">Show Now</button>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('/assets/images/slide-03.jpg.webp');">
+                    <div class="container">
+                        <span>Men Collection 2018</span>
+                        <h1 data-aos="fade-left">New Season</h1>
+                        <button class="btn-blue">Show Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="prev"><i class="fa-solid fa-caret-left"></i></div>
+            <div class="next"><i class="fa-solid fa-caret-right"></i></div>
+        </div>
+    </section>
+
+    <section id="banner">
+        <div class="container">
+            <div class="banners">
+                <div class="banner-card">
+                    <img src="/assets/images/banner-01.jpg.webp" alt="">
+                    <div class="banner-info">
+                        <h2>Women</h2>
+                        <span>Spring 2018</span>
+                    </div>
+                    <div class="overlay">
+                        <p>Shop Now</p>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="banner-card">
+                    <img src="/assets/images/banner-02.jpg.webp" alt="">
+                    <div class="banner-info">
+                        <h2>Men</h2>
+                        <span>Spring 2018</span>
+                    </div>
+                    <div class="overlay">
+                        <p>Shop Now</p>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="banner-card">
+                    <img src="/assets/images/banner-03.jpg.webp" alt="">
+                    <div class="banner-info">
+                        <h2>Accessories</h2>
+                        <span>New Trend</span>
+                    </div>
+                    <div class="overlay">
+                        <p>Shop Now</p>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="cards">
+        <div class="container">
+           <div id="card-container"></div>
+           <div class="btn">
+            <button class="loadMore" id="load-more-btn">Load More</button>
+           </div>
+        </div>
+        <!-- <div class="card" data-id="1">
             <h2 class="title">Palermo Women's Sneakers</h2>
             <div class="info">A terrace legend from our archives returns: The Palermo. The silhouette debuted back in
                 the early '80s, where it</div>
@@ -58,47 +149,13 @@
             <button class="add-to-whislist">
                 <i class="fa-solid fa-heart"></i>
             </button>
-        </div>
-        <div class="card" data-id="2">
-            <img src="images/Palermo2.avif" alt="">
-            <h2 class="title">Palermo Women's Leather Sneakers</h2>
-            <div class="info">A terrace legend from our archives returns: The Palermo. The silhouette debuted back in
-                the early '80s, where it</div>
-            <div class="price">$90</div>
-            <button class="add-to-cart button">Add to cart</button>
-            <button class="add-to-whislist">
-                <i class="fa-solid fa-heart"></i>
-            </button>
-        </div>
-        <div class="card" data-id="3">
-            <img src="images/Palermo3.avif" alt="">
-            <h2 class="title">Palermo Women's Leather Sneakers</h2>
-            <div class="info">A terrace legend from our archives returns: The Palermo. The silhouette debuted back in
-                the early '80s, where it</div>
-            <div class="price">$90</div>
-            <button class="add-to-cart button">Add to cart</button>
-            <button class="add-to-whislist">
-                <i class="fa-solid fa-heart"></i>
-            </button>
-        </div>
+        </div> -->
     </section>
-
-    <!-- <section id="cards">
-        <div class="container">
-            <div class="cards">
-                <div class="card">
-                    <img src="./assets/images/product-01.jpg.webp" alt="">
-                    <div class="card-body">
-                        <div class="card-title">Esprit Ruffle Shirt</div>
-                        <i class="fa-regular fa-heart"></i>
-                    </div>
-                    <div class="card-price">$16.64</div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <script src="/assets/js/checkout.js"></script>
-    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/card.js"></script>
+    <script src="/assets/js/slider.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- <script src="/assets/js/checkout.js"></script>
+    <script src="/assets/js/script.js"></script> -->
 </body>
 
 </html>

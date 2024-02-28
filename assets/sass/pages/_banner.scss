@@ -1,0 +1,64 @@
+#banner {
+  .banners {
+    display: flex;
+    gap: 30px;
+  }
+  .banner-card {
+    width: 31%;
+    border: 1px solid #e6e6e6;
+    position: relative;
+    &:hover .overlay{
+        opacity: 1;
+    }
+    .overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(103, 117, 214, 0.8);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      padding: 30px;
+      font-size: 18px;
+      opacity: 0;
+      transition: 0.5s;
+      span {
+        display: inline-block;
+        width: 90px;
+        height: 3px;
+        background-color: #fff;
+        margin-top: 10px;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .banner-info {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      h2 {
+        font-size: 32px;
+        color: #333;
+      }
+      span {
+        color: $gray2;
+      }
+    }
+  }
+}
+
+  @media screen and (max-width: 992px) {
+    #banner{
+        .banners{
+            flex-direction: column;
+            .banner-card {
+                width: 100%;
+            }
+        }
+    }
+  }

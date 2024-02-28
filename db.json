@@ -12,7 +12,7 @@
        {
         "id": 2,
         "category":"women",
-        "image":"/assets/images/product-01.jpg.webp",
+        "image":"/assets/images/product-02.jpg.webp",
         "title": "Herschel supply",
         "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
         "price": 35.31,
@@ -20,20 +20,128 @@
        },
        {
         "id": 3,
-        "category":"women",
-        "image":"/assets/images/product-01.jpg.webp",
-        "title": "Classic Trench Coat",
+        "category":"men",
+        "image":"/assets/images/product-03.jpg.webp",
+        "title": "Only Check Trouser",
         "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
-        "price": 75.00,
+        "price": 25.50,
         "quantity":1
        },
        {
         "id": 4,
         "category":"women",
-        "image":"/assets/images/product-01.jpg.webp",
+        "image":"/assets/images/product-04.jpg.webp",
+        "title": "Classic Trench Coat",
+        "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
+        "price": 5.00,
+        "quantity":1
+       },
+       {
+        "id": 5,
+        "category":"women",
+        "image":"/assets/images/product-05.jpg.webp",
         "title": "Front Pocket Jumper",
         "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
         "price": 34.75,
+        "quantity":1
+       },
+       {
+        "id": 6,
+        "category":"watches",
+        "image":"/assets/images/product-06.jpg.webp",
+        "title": "Vintage Inspired Classic",
+        "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
+        "price": 93.20,
+        "quantity":1
+       },
+       {
+        "id": 7,
+        "category":"women",
+        "image":"/assets/images/product-07.jpg.webp",
+        "title": "Shirt in Stretch Cotton",
+        "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
+        "price": 52.66,
+        "quantity":1
+       },
+       {
+        "id": 8,
+        "category":"women",
+        "image":"/assets/images/product-08.jpg.webp",
+        "title": "Pieces Metallic Printed",
+        "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
+        "price": 18.96,
+        "quantity":1
+       },
+       {
+        "id": 9,
+        "category":"shoes",
+        "image":"/assets/images/product-09.jpg.webp",
+        "title": "Converse All Star Hi Plimsolls",
+        "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
+        "price": 75.00,
+        "quantity":1
+       },
+       {
+        "id": 10,
+        "category":"women",
+        "image":"/assets/images/product-10.jpg.webp",
+        "title": "Femme T-Shirt In Stripe",
+        "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
+        "price": 25.85,
+        "quantity":1
+       },
+       {
+        "id": 11,
+        "category":"men",
+        "image":"/assets/images/product-11.jpg.webp",
+        "title": "Herschel supply",
+        "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
+        "price": 63.16,
+        "quantity":1
+       },
+       {
+        "id": 12,
+        "category":"men",
+        "image":"/assets/images/product-12.jpg.webp",
+        "title": "Herschel supply",
+        "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
+        "price": 63.15,
+        "quantity":1
+       },
+       {
+        "id": 13,
+        "category":"shoes",
+        "image":"/assets/images/product-13.jpg.webp",
+        "title": "T-Shirt with Sleeve",
+        "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
+        "price": 18.49,
+        "quantity":1
+       },
+       {
+        "id": 14,
+        "category":"women",
+        "image":"/assets/images/product-14.jpg.webp",
+        "title": "Pretty Little Thing",
+        "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
+        "price": 54.79,
+        "quantity":1
+       },
+       {
+        "id": 15,
+        "category":"watches",
+        "image":"/assets/images/product-15.jpg.webp",
+        "title": "Mini Silver Mesh Watch",
+        "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
+        "price": 86.85,
+        "quantity":1
+       },
+       {
+        "id": 16,
+        "category":"women",
+        "image":"/assets/images/product-16.jpg.webp",
+        "title": "Square Neck Back",
+        "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
+        "price": 29.64,
         "quantity":1
        }
 

@@ -1,14 +1,108 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $poppins;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-ul{
-    list-style: none;
+ul {
+  list-style: none;
 }
 .container{
-    padding: 100px;
+    padding: 80px 100px;
+}
+.containerX {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.containerY {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.btn-blue {
+  border: none;
+  width: max-content;
+  background-color: #717fe0;
+  color: #fff;
+  padding: 11px 44px;
+  border-radius: 23px;
+  font-size: 18px;
+}
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+  &:hover .prev {
+    opacity: 1;
+  }
+  &:hover .next {
+    opacity: 1;
+  }
+}
+.slides {
+  display: flex;
+}
+.slide {
+  min-width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  span {
+    font-size: 28px;
+    color: #333333;
+  }
+  h1 {
+    font-size: 72px;
+    color: #333333;
+    text-transform: uppercase;
+    font-family: $playfair;
+    margin: 10px 0 40px 0;
+  }
+}
+.dot-container {
+  text-align: center;
+  margin-top: 10px;
+}
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gray;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.active {
+  background-color: black;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 60px;
+  color: $gray;
+  cursor: pointer;
+  transition: 0.4s;
+  padding: 0 20px;
+  opacity: 0;
+
+  &:hover {
+    color: #717fe0;
+  }
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
 }
