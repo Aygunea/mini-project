@@ -1,0 +1,41 @@
+{
+    "products": [
+        {
+        "id": 1,
+        "category":"women",
+        "image":"/assets/images/product-01.jpg.webp",
+        "title": "Esprit Ruffle Shirt",
+        "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
+        "price": 16.64,
+        "quantity":1
+       },
+       {
+        "id": 2,
+        "category":"women",
+        "image":"/assets/images/product-01.jpg.webp",
+        "title": "Herschel supply",
+        "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
+        "price": 35.31,
+        "quantity":1
+       },
+       {
+        "id": 3,
+        "category":"women",
+        "image":"/assets/images/product-01.jpg.webp",
+        "title": "Classic Trench Coat",
+        "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
+        "price": 75.00,
+        "quantity":1
+       },
+       {
+        "id": 4,
+        "category":"women",
+        "image":"/assets/images/product-01.jpg.webp",
+        "title": "Front Pocket Jumper",
+        "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
+        "price": 34.75,
+        "quantity":1
+       }
+
+    ]
+}
