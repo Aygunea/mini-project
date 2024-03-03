@@ -1,23 +1,39 @@
+.btn-primary{
+  background-color: #e6e6e6;
+  width: max-content;
+  color: #000;
+  padding: 13px 50px;
+  border: none;
+  border-radius: 25px;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.5s;
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}
+.btn-black{
+  background-color: #222;
+  width: max-content;
+  color: #e6e6e6;
+  padding: 11px 40px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.5s;
+  &:hover {
+    background-color: #6a74d2;
+    color: #fff;
+  }
+}
 #cards {
   .btn {
     display: flex;
     justify-content: center;
-    .loadMore {
-      background-color: #e6e6e6;
-      color: #000;
-      padding: 13px 50px;
-      border: none;
-      border-radius: 25px;
-      font-size: 17px;
-      font-weight: 500;
-      text-transform: uppercase;
-      transition: 0.5s;
-      margin-top: 80px;
-      &:hover {
-        background-color: #000;
-        color: #fff;
-      }
-    }
   }
 }
 #card-container {
@@ -32,19 +48,29 @@
     flex-direction: column;
     row-gap: 15px;
     overflow: hidden;
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      .image-box{
+        width: 100%;
+        height: 85%;
+        overflow: hidden;
+      }
+    }
     .card-image {
       display: flex;
       align-items: end;
       justify-content: center;
       padding-bottom: 20px;
       background-size: cover;
+      background-position: center;
       width: 100%;
       height: 100%;
-      overflow: hidden;
       transition: 1s;
+      margin-bottom: 20px;
       &:hover {
-        transform: scale(1.2);
-        overflow: hidden;
+        transform: scale(1.1); 
+        transform-origin: center center;
       }
       button {
         padding: 12px 40px;
@@ -62,7 +88,7 @@
         }
       }
       &:hover button {
-        transform: translateY(0);
+        transform: translateY(-10px);
         opacity: 1;
       }
     }
@@ -70,6 +96,7 @@
       display: flex;
       justify-content: space-between;
       color: $gray;
+      margin-top: 10px;
       .card-title {
         transition: 0.5s;
         &:hover {
@@ -85,15 +112,15 @@
 @media screen and (max-width: 768px) {
   #card-container .card {
     width: 100% !important;
-    height: 600px;
+    height: 900px;
   }
 }
 @media screen and (max-width: 992px) {
   #card-container .card {
     width: 42%;
   }
-  .container{
-    padding: 80px 40px;
+  .container {
+    padding: 80px 20px;
   }
 }
 @media screen and (max-width: 1100px) {

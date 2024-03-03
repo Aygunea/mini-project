@@ -10,8 +10,8 @@ a {
 ul {
   list-style: none;
 }
-.container{
-    padding: 80px 100px;
+.container {
+  padding: 80px 100px;
 }
 .containerX {
   padding-left: 100px;
@@ -29,6 +29,10 @@ ul {
   padding: 11px 44px;
   border-radius: 23px;
   font-size: 18px;
+  transition: 0.5s;
+  &:hover {
+    background-color: #000;
+  }
 }
 .slider-container {
   position: relative;
@@ -40,69 +44,372 @@ ul {
   &:hover .next {
     opacity: 1;
   }
-}
-.slides {
-  display: flex;
-}
-.slide {
-  min-width: 100%;
-  height: 100vh;
-  box-sizing: border-box;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  background-size: cover;
-  background-position: center;
-  span {
-    font-size: 28px;
-    color: #333333;
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+    color: $gray;
+    cursor: pointer;
+    transition: 0.4s;
+    padding: 0 20px;
+    opacity: 0;
+
+    &:hover {
+      color: #717fe0;
+    }
   }
-  h1 {
-    font-size: 72px;
-    color: #333333;
-    text-transform: uppercase;
-    font-family: $playfair;
-    margin: 10px 0 40px 0;
+
+  .prev {
+    left: 10px;
   }
-}
-.dot-container {
-  text-align: center;
-  margin-top: 10px;
-}
-.dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: gray;
-  margin: 0 5px;
-  cursor: pointer;
-}
-.active {
-  background-color: black;
+
+  .next {
+    right: 10px;
+  }
+  .slides {
+    display: flex;
+    .slide {
+      min-width: 100%;
+      height: 100vh;
+      box-sizing: border-box;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      span {
+        font-size: 28px;
+        color: #333333;
+      }
+      h1 {
+        font-size: 72px;
+        color: #333333;
+        text-transform: uppercase;
+        font-family: $playfair;
+        margin: 10px 0 40px 0;
+      }
+    }
+  }
 }
 
-.prev,
-.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 60px;
-  color: $gray;
-  cursor: pointer;
+// Modal and modal -slider
+.modal-slider-container {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
   transition: 0.4s;
-  padding: 0 20px;
-  opacity: 0;
+  &:hover .prev {
+    opacity: 1;
+  }
+  &:hover .next {
+    opacity: 1;
+  }
+}
+.modal-slides {
+  display: flex;
+  .modal-slide {
+    width: 90%;
+    height: 600px;
+    background-size: cover;
+    font-size: 24px;
+    img {
+      width: 100%;
+      height: 80%;
+    }
+  }
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+    color: $gray;
+    cursor: pointer;
+    transition: 0.4s;
+    padding: 0 20px;
+    opacity: 0;
+  }
 
-  &:hover {
-    color: #717fe0;
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
   }
 }
 
-.prev {
-  left: 10px;
+//modal
+.swal-overlay {
+  z-index: 1100 !important;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.7);
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 50px;
+    padding-bottom: 0;
+    width: 78%;
+    height: 90vh;
+    display: flex;
+    gap: 30px;
+    .modal-left {
+      width: 100%;
+    }
+    .modal-right {
+      width: 50%;
+      color: #333333;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .modal-social-icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        color: #666;
+      }
+      .add-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 30px;
+        .btn-blue {
+          transition: 0.5s;
+          &:hover {
+            background-color: #000;
+          }
+        }
+        .quantityBtns {
+          display: flex;
+          border: 1px solid #e6e6e6;
+          color: #f7f7f7;
+          font-size: 20px;
+          font-weight: 500;
+          button {
+            border: none;
+            background-color: #fff;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            transition: 0.5s;
+            &:hover {
+              background-color: #717fe0;
+              color: #fff;
+            }
+          }
+          .modal-total-count {
+            background-color: #f7f7f7;
+            color: #000;
+            font-size: 16px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+          }
+        }
+      }
+      .modal-title {
+        font-size: 30px;
+      }
+      .modal-price {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .modal-info {
+        color: #666666;
+      }
+    }
+  }
 }
 
-.next {
-  right: 10px;
+.close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: 0.6s;
+}
+
+.close:hover,
+.close:focus {
+  color: #fff;
+  cursor: pointer;
+}
+
+//Filter Product
+#products-filter {
+  padding: 0 100px;
+  p {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    .category {
+      display: flex;
+      gap: 30px;
+      li {
+        font-size: 15px;
+        font-family: Arial, sans-serif;
+        padding-bottom: 5px;
+        transition: 1s;
+        &:hover {
+          color: #333333;
+          border-bottom: 1px solid #333333;
+        }
+        a {
+          color: #888888;
+          transition: all 0.6s;
+        }
+      }
+    }
+  }
+  .filter-btn.active {
+    border-bottom: 1px solid #333333;
+  }
+  .filter-buttons {
+    .filter-button {
+      background-color: white;
+      font-size: 15px;
+      padding: 5px 10px;
+      border: 1px solid #d7d7d7;
+      border-radius: 2px;
+      margin: 2px;
+      transition: all 4ms;
+      i {
+        margin: 5px;
+        font-size: 10px;
+      }
+
+      &:hover {
+        background-color: rgb(15, 100, 220);
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+  #filterBox {
+    display: none;
+  }
+  .filterBox {
+    display: flex;
+    background-color: #f2f2f2;
+    padding: 27px 80px 27px 40px;
+    justify-content: space-between;
+    margin-top: 30px;
+    .filter-1 {
+      font-size: 15px;
+      color: #aaaaaa;
+      h4 {
+        margin-bottom: 15px;
+      }
+      a {
+        color: #aaaaaa;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      i {
+        margin-right: 10px;
+      }
+    }
+    .tags {
+      text-wrap: 2px;
+      width: 200px;
+      h4 {
+        margin-bottom: 15px;
+      }
+      button {
+        width: max-content;
+        border-radius: 14px;
+        border: 1px solid #d7d7d7;
+        padding: 5px 10px;
+        margin-bottom: 8px;
+        color: #888888;
+      }
+    }
+  }
+}
+.searchBox {
+  display: none;
+  #searchContainer {
+    width: 100%;
+    border: 1px solid #d7d7d7;
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    input {
+      outline: none;
+      background: none;
+      width: 100%;
+      border: none;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 992px) {
+  #products-filter {
+    padding: 0 20px;
+  }
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  float: left;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.category {
+  list-style: none;
+  padding: 0;
+}
+
+.category li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.category li a {
+  text-decoration: none;
+  color: blue;
+}
+
+.category li a:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }

@@ -1,7 +1,19 @@
+.sticky{
+   background-color: #eaeaea;
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.headersticky{
+  background-color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
 header {
-  background-color: #e5e4e2;
-  color: #fff;
-  padding: 0 100px;
+  background-color: transparent;
+  padding: 8px 100px;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+
   .menu {
     display: flex;
     gap: 20px;
@@ -14,88 +26,150 @@ header {
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     .slicknav-menu {
       display: none;
     }
     .nav-end {
       display: flex;
-      align-items: center;
       gap: 20px;
+      .cart-box {
+        position: relative;
+        #cart-count {
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          width: 16px;
+          line-height: 16px;
+          height: 16px;
+          text-align: center;
+          font-size: 12px;
+          background-color: #717fe0;
+          color: #fff;
+        }
+      }
     }
     .logo {
       display: flex;
       gap: 80px;
     }
-    .cart {
-      position: relative;
-      &:hover #dropdown-cart {
-        opacity: 1;
-      }
-    }
-    .cart-box {
-      position: relative;
-      i {
-        font-size: 22px;
-      }
-      span {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        text-align: center;
-        line-height: 20px;
-        font-size: 12px;
-        background-color: orange;
-        border-radius: 50%;
-        color: #fff;
-        font-weight: 900;
-        position: absolute;
-        top: -10px;
-        left: 20px;
-      }
-    }
-    #dropdown-cart {
-      background-color: orange;
-      width: max-content;
-      padding: 20px;
-      margin-top: 20px;
-      position: absolute;
-      right: -25px;
-      transition: 0.6s;
-      opacity: 0;
-      .cartImage {
-        width: 80px;
-        height: 80px;
-        background-size: cover;
-        display: inline-block;
-      }
-      #productElement {
-        padding: 20px 0;
-        border-bottom: 1px solid #e5e4e2;
-        .cartProduct {
-          display: flex;
-          width: 100%;
-          flex-wrap: wrap;
-          gap: 20px;
-          .card-body {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-          }
-        }
-      }
-      #cart-total {
-        margin-top: 20px;
-      }
-    }
   }
 }
+.menu-container {
+  display: none;
+}
+.mobile-menu {
+  display: none;
+}
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 @media screen and (max-width: 992px) {
-  ul.menu {
+  .mobile-menu {
     display: none;
+    background-color: #717fe0;
+    font-weight: 500;
+    padding: 20px;
+    li{
+      margin: 10px 0;
+    }
+    a{
+      color: #fff;
+    }
   }
-
+  header{
+    padding: 10px;
+    nav{
+      flex-direction: column;
+      .logo {
+        flex-direction: column;
+        gap: 10px;
+        .menu {
+          display: none ;
+        }
+      }
+    }
+  }
   .nav-end .slicknav-menu {
     display: block;
+  }
+}
+
+//Header CART
+#header-cart {
+  position: fixed;
+  z-index: 2500;
+  top: 0;
+  right: 0;
+
+  .slideMenu {
+    height: 100vh;
+    width: max-content;
+    position: absolute;
+    overflow: auto;
+    top: 0;
+    right: -500px;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    padding: 40px 50px;
+    transition: right 0.3s ease-in-out;
+    .header-title {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+    .row {
+      display: flex;
+      gap: 10px;
+      margin-top: 30px;
+    }
+    .header-cart-item {
+      display: flex;
+    }
+  }
+  .header-cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .header-cart-item {
+      display: flex;
+      gap: 30px;
+      .card-image {
+        width: 70px;
+        position: relative;
+        &:hover .img-overlay {
+          opacity: 1;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        .img-overlay {
+          background-color: rgba(0, 0, 0, 0.3);
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: 0.5s;
+        }
+      }
+      .card-title {
+        margin-bottom: 20px;
+        color: #555;
+      }
+      .card-price {
+        color: #888;
+      }
+    }
+  }
+  .totalCount {
+    margin-top: 70px;
   }
 }

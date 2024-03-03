@@ -1,5 +1,7 @@
 #banner {
   .banners {
+    flex-wrap: wrap;
+    justify-content: center;
     display: flex;
     gap: 30px;
   }
@@ -7,8 +9,16 @@
     width: 31%;
     border: 1px solid #e6e6e6;
     position: relative;
-    &:hover .overlay{
-        opacity: 1;
+    &:hover .overlay {
+      opacity: 1;
+    }
+    &:hover .overlay span {
+      transform: scaleX(1);
+    }
+    &:hover .overlay p {
+      opacity: 1;
+      transform: translateY(0);
+      height: max-content;
     }
     .overlay {
       width: 100%;
@@ -28,9 +38,17 @@
       span {
         display: inline-block;
         width: 90px;
-        height: 3px;
+        height: 1px;
         background-color: #fff;
         margin-top: 10px;
+        transition: 0.6s;
+        transform: scaleX(0);
+      }
+      p {
+        transition: 0.6s;
+        opacity: 0;
+        transform: translateY(20px);
+        font-size: 18px;
       }
     }
     img {
@@ -52,13 +70,20 @@
   }
 }
 
-  @media screen and (max-width: 992px) {
-    #banner{
-        .banners{
-            flex-direction: column;
-            .banner-card {
-                width: 100%;
-            }
-        }
+@media screen and (max-width: 1100px) {
+  #banner {
+    .banner-card {
+      width: 47%;
     }
   }
+}
+@media screen and (max-width: 650px) {
+  #banner {
+    .banners {
+      flex-direction: column;
+      .banner-card {
+        width: 100%;
+      }
+    }
+  }
+}

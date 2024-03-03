@@ -1,90 +1,74 @@
 document.addEventListener("DOMContentLoaded", () => {
+  let basket = JSON.parse(localStorage.getItem("basket")) || [];
   function DisplayCheckout() {
-    let cart = JSON.parse(localStorage.getItem("basket")) || [];
+    let basket = JSON.parse(localStorage.getItem("basket")) || [];
     let checkoutItems = document.getElementById("checkout-items");
+    if (basket.length === 0) {
+      checkoutItems.innerHTML = "<p>Sepet boş</p>";
+      return;
+    }
     checkoutItems.innerHTML = "";
-    cart.forEach((product, index) => {
-      let cartElement = document.createElement("div");
-      cartElement.innerHTML = `
-            <div class="checkout-product" data-id=${product.id}>
-                <img class="checkout-image" src=${product.image} alt="">
+    basket.forEach((product, index) => {
+      let checkoutItem = document.createElement("div");
+      checkoutItem.classList = "checkout-item";
+      checkoutItem.dataset.id = `${product.id}`;
+      checkoutItem.innerHTML = `
+                 <div class="checkout-image" >
+                   <img src=${product.image} alt="">
+                 </div>
                 <div class="checkout-card-body">
-                <h3>${product.title}</h3>
-                <p class="price">${product.price.toFixed(2)}$</p>
+                <p class="card-title check-col">${product.title}</p>
+                <p class="price check-col">${product.price.toFixed(2)}$</p>
                 <br/>
-                <div class="quantity">
+                <div class="quantity check-col">
                    <button class="decrease">-</button>
-                   <span class="quantity">${product.quantity}</span>
+                   <span class="quantityCount">${product.quantity}</span>
                    <button class="increase">+</button>
                 </div> 
-                <span class="product-total-price">
-                Total: ${(product.quantity * product.price).toFixed(2)} $
+                <span class="product-total-price check-col">
+                 ${(product.quantity * product.price).toFixed(2)} $
                 </span>
-                <button class="delete-checkout-product">
-               Delete Product
-                </button>
                 </div>
-            </div>
+          
                 `;
 
-      checkoutItems.appendChild(cartElement);
-
-      cartElement.querySelector(".increase").addEventListener("click", () => {
+      checkoutItems.appendChild(checkoutItem);
+      checkoutItem.querySelector(".increase").addEventListener("click", () => {
         updateProductQuantity(index, 1);
       });
-      cartElement.querySelector(".decrease").addEventListener("click", () => {
+      checkoutItem.querySelector(".decrease").addEventListener("click", () => {
         updateProductQuantity(index, -1);
-        cart[index].quantity++;
+        basket[index].quantity++;
       });
-      cartElement
-        .querySelector(".delete-checkout-product")
-        .addEventListener("click", () => {
-          deleteProductFromCheckout(index);
-          checkoutItems.innerHTML = "<p>Empty</p>";
-        });
     });
-    updateProductQuantity();
   }
-
   function updateProductQuantity(index, change) {
-    let cart = JSON.parse(localStorage.getItem("basket")) || [];
-    if (cart[index].quantity + change <= 0) {
-      cart.splice(index, 1);
+    if (basket[index].quantity + change <= 0) {
+      basket.splice(index, 1);
     } else {
-      cart[index].quantity += change;
+      basket[index].quantity += change;
     }
 
-    localStorage.setItem("basket", JSON.stringify(cart));
+    localStorage.setItem("basket", JSON.stringify(basket));
+    calculateTotalPrice();
     DisplayCheckout();
-    UpdateCheckoutTotalPrice();
   }
-
-  function UpdateCheckoutTotalPrice() {
-    let cart = JSON.parse(localStorage.getItem("basket")) || [];
-
-    const total = cart.reduce(
-      (toplam, item) => toplam + item.price * item.quantity,
-      0
-    );
-  }
-  function deleteProductFromCheckout(index) {
-    let cart = JSON.parse(localStorage.getItem("basket")) || [];
-
-    cart.splice(index, 1);
-    localStorage.setItem("basket", JSON.stringify(cart));
-
-    DisplayCheckout();
-    UpdateCheckoutTotalPrice();
-  }
-
-  document
-    .getElementById("checkout-delete-all")
-    .addEventListener("click", () => {
-      localStorage.removeItem("basket");
-      DisplayCheckout();
-      UpdateCheckoutTotalPrice();
+  function calculateTotalPrice() {
+    let basket = JSON.parse(localStorage.getItem("basket")) || [];
+    let totalPrice = 0;
+    basket.forEach((product) => {
+      totalPrice += product.price * product.quantity;
     });
+    DisplayCheckout();
+    return totalPrice;
+  }
 
+  const totalPriceElement = document.getElementById("subtotalprice");
+  const totalPriceBtn = document.getElementById("checkout-total-price");
+
+  totalPriceElement.textContent = "Total: $" + calculateTotalPrice().toFixed(2);
+  totalPriceBtn.textContent = "Total: $" + calculateTotalPrice().toFixed(2);
+
+  calculateTotalPrice();
   DisplayCheckout();
-  UpdateCheckoutTotalPrice();
 });

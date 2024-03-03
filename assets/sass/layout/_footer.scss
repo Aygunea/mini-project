@@ -1,0 +1,116 @@
+footer {
+  background-color: #222222;
+  padding: 50px 120px;
+  .footer-box {
+    display: flex;
+    padding: 40px 0;
+    justify-content: space-between;
+    .footer-item {
+      font-size: 15px;
+      color: #b2b2b2;
+      a {
+        color: #b2b2b2;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        input {
+          background: transparent;
+          border: none;
+          outline: none;
+          padding: 10px 0;
+          font-size: 14px;
+          border-bottom: 2px solid rgba(204, 204, 204, 0.1);
+        }
+        button {
+          padding: 15px 60px;
+          width: max-content;
+          background-color: #717fe0;
+          border-radius: 50px;
+          border: none;
+          color: #fff;
+          text-transform: uppercase;
+          font-size: 16px;
+          font-weight: 500;
+          &:hover {
+            background-color: #fff;
+            color: #717fe0;
+          }
+        }
+      }
+      h3 {
+        margin-bottom: 35px;
+        color: white;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      i {
+        padding: 27px 0px 0px;
+        font-size: 15px;
+      }
+      p {
+        color: #b2b2b2;
+        width: 300px;
+        font-size: 13px;
+      }
+      .social-icons {
+        display: flex;
+        gap: 25px;
+      }
+    }
+    .tags {
+      text-wrap: 2px;
+      width: 200px;
+      h4 {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .footer-end {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .footer-images {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      margin: 50px 0 30px 0;
+    }
+    .copyright {
+      color: #888;
+      font-size: 14px;
+      span {
+        color: #007bff;
+      }
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+    footer{
+        padding: 50px 20px;
+    }
+  .footer-box {
+    flex-wrap: wrap;
+    gap: 50px;
+    .footer-item {
+        width: 40%;
+      }
+  }
+}
+@media screen and (max-width: 568px) {
+    footer{
+        .footer-box {
+            .footer-item {
+                width: 100%;
+              }
+          }
+         .footer-end .copyright{
+            font-size: 12px;
+        }
+    }
+  
+}

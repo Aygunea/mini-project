@@ -9,82 +9,104 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"
-        integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <title>COZASTORE</title>
 </head>
 
 <body>
-    <header>
+
+    <header id="header">
         <nav>
-            <div class="logo">
-                <a href="index.html">
-                    <img src="/assets/images/logo-01.png.webp" alt="">
-                </a>
-                <ul class="menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="nav-end">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <div class="cart">
-                    <div class="cart-box">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <span id="cart-count">0</span>
-                    </div>
-                    <div id="dropdown-cart">
-                        <div id="cart-items">
-
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="/assets/images/logo-01.png.webp" alt="">
+                    </a>
+                    <ul class="menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="nav-end">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <div class="cart">
+                        <div class="cart-box" id="slideButton">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span id="cart-count">0</span>
                         </div>
-                        <p class="cart-total">
-                            Toplam - <span id="total-price"></span> $
-                        </p>
-                        <p class="total-count">
-                            <span id="unique-product-count">0</span>
-                            different product
-                        </p>
-                        <button id="delete-all">Delete All</button>
-                        <button id="go-to-checkout">Checkout</button>
-
+                    </div>
+                    <div id="wishlistIcon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="slicknav-menu">
+                        <i class="fa-solid fa-bars"></i>
                     </div>
                 </div>
-                <button id="whislist"><i class="fa-regular fa-heart"></i></button>
-                <div class="slicknav-menu">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
             </div>
-            
         </nav>
+        <ul class="mobile-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
     </header>
+    <div id="header-cart">
+        <div class="slideMenu">
+            <div class="header-title">
+                <h3>Your Cart</h3>
+                <i class="fa-solid fa-xmark header-close-btn"></i>
+            </div>
+            <div class="header-cart-items" id="header-cart-items">
+                <div class="header-cart-item"></div>
+            </div>
+            <div id="total-price" class="totalCount"></div>
+            <div class="row">
+                <div class="btn-black">View cart</div>
+                <div class="btn-black" id="go-to-checkout">Check Out</div>
+            </div>
+        </div>
+    </div>
     <section id="slider">
         <div class="slider-container">
             <div class="slides">
                 <div class="slide" style="background-image: url('/assets/images/slide-01.jpg.webp');">
                     <div class="container">
-                        <span>Women Collection 2018</span>
-                        <h1>New Season</h1>
-                        <button class="btn-blue">Show Now</button>
+                        <span class="animate__animated animate__fadeInDown animate__slow">Women Collection 2018</span>
+                        <h1 class="animate__animated animate__fadeInUp animate__slow">New Season</h1>
+                        <button class="btn-blue animate__animated animate__zoomIn animate__fast animate__delay-1s">Show
+                            Now</button>
                     </div>
                 </div>
                 <div class="slide" style="background-image: url('/assets/images/slide-02.jpg.webp');">
                     <div class="container">
                         <span>Men New- Season</span>
-                        <h1>Jackets & Coats</h1>
-                        <button class="btn-blue">Show Now</button>
+                        <h1 class="animate__fadeInRightBig  animate__animated animate__slow">Jackets & Coats</h1>
+                        <button class="btn-blue nimate__animated animate__fadeInUp animate__fast animate__delay-1s">Show
+                            Now</button>
                     </div>
                 </div>
                 <div class="slide" style="background-image: url('/assets/images/slide-03.jpg.webp');">
                     <div class="container">
-                        <span>Men Collection 2018</span>
+                        <span class="">Men Collection 2018</span>
                         <h1 data-aos="fade-left">New Season</h1>
-                        <button class="btn-blue">Show Now</button>
+                        <button
+                            class="btn-blue btn-blue nimate__animated animate__rotateOut animate__fast animate__delay-1s">Show
+                            Now</button>
                     </div>
                 </div>
             </div>
@@ -133,29 +155,166 @@
         </div>
     </section>
 
+    <section id="products-filter">
+        <p>PRODUCT OVERVIEW</p>
+        <div class="filters">
+            <div class="filter-category">
+                <ul class="category">
+                    <li class="filter-btn active" data-category="all">All Products</li>
+                    <li class="filter-btn" data-category="women">Women</li>
+                    <li class="filter-btn" data-category="men">Men</li>
+                    <li class="filter-btn" data-category="bag">Bag</li>
+                    <li class="filter-btn" data-category="shoes">Shoes</li>
+                    <li class="filter-btn" data-category="watches">Watches</li>
+                </ul>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-button" id="filterBtn">
+                    <i class="fa-solid fa-arrow-down-wide-short"></i>
+                    Filter
+                </button>
+                <button class="filter-button" id="searchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search
+                </button>
+
+            </div>
+        </div>
+        <div id="product-list"></div>
+
+        <div class="searchBox">
+            <div id="searchContainer">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Arama yap...">
+            </div>
+        </div>
+        <div id="filterBox">
+            <div class="filterBox">
+                <div class="filter-1">
+                    <h4>Short By</h4>
+                    <ul class="sort-by">
+                        <li id="defaultOrder">Default</li>
+                        <li>Popularity</li>
+                        <li>Average raiting</li>
+                        <li>Newness</li>
+                        <li id="lowToHight">Prices: Low to Hight</li>
+                        <li id="hightToLow">Prices: Hight to Low</li>
+                    </ul>
+                </div>
+                <div class="filter-1">
+                    <h4>Price</h4>
+                    <ul class="sort-by">
+                        <li><a href="#">All</a></li>
+                        <li><a href="#">$0.00 - $50.00</a></li>
+                        <li><a href="#">$50.00 - $100.00</a></li>
+                        <li><a href="#">$100.00 - $150.00</a></li>
+                        <li><a href="#">$150.00 - $200.00</a></li>
+                        <li><a href="#">$200.00+</a></li>
+                    </ul>
+                </div>
+                <div class="filter-1">
+                    <h4>Color</h4>
+                    <ul class="sort-by">
+                        <li><a href="#"><i class="fa-solid fa-circle" style="color: black;"></i>Black</a></li>
+                        <li><a href="#"><i class="fa-solid fa-circle" style="color: blue;"></i>Blue</a></li>
+                        <li><a href="#"><i class="fa-solid fa-circle" style="color: grey;"></i>Grey</a></li>
+                        <li><a href="#"><i class="fa-solid fa-circle" style="color: green;"></i>Green</a></li>
+                        <li><a href="#"><i class="fa-solid fa-circle" style="color: red;"></i>Red</a></li>
+                        <li><a href="#"><i class="fa-regular fa-circle"></i>White</a></li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <h4>Tags</h4>
+                    <ul class="sort-by">
+                        <button>Fashion</button>
+                        <button>Lifestyle</button>
+                        <button>Denim</button>
+                        <button>Streetstyle</button>
+                        <button>Crafts</button>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
     <section class="products" id="cards">
         <div class="container">
-           <div id="card-container"></div>
-           <div class="btn">
-            <button class="loadMore" id="load-more-btn">Load More</button>
-           </div>
+            <div id="card-container"></div>
+            <div class="btn">
+                <button class="loadMore btn-primary" id="loadMore">Load More</button>
+            </div>
         </div>
-        <!-- <div class="card" data-id="1">
-            <h2 class="title">Palermo Women's Sneakers</h2>
-            <div class="info">A terrace legend from our archives returns: The Palermo. The silhouette debuted back in
-                the early '80s, where it</div>
-            <div class="price">$90</div>
-            <button class="add-to-cart button">Add to cart</button>
-            <button class="add-to-whislist">
-                <i class="fa-solid fa-heart"></i>
-            </button>
-        </div> -->
+
+        <div id="customModal" class="modal"></div>
     </section>
+
+    <footer>
+        <div class="footer-box">
+            <div class="footer-item">
+                <h3>CATEGORIES</h3>
+                <ul>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Shoes</a></li>
+                    <li><a href="#">Watches</a></li>
+                </ul>
+            </div>
+            <div class="footer-item">
+                <h3>HELP</h3>
+                <ul>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">FAGs</a></li>
+                </ul>
+            </div>
+            <div class="footer-item">
+                <h3>GET IN TOUCH</h3>
+                <p>Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on
+                    (+1) 96 716 6879</p>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-pinterest-p"></i>
+                </div>
+            </div>
+            <div class="footer-item">
+                <h3>NEWSLETTER</h3>
+                <form action="email">
+                    <input type="email" placeholder="email@example.com" id="email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-end">
+            <div class="footer-images">
+                <img src="/assets/images/icon-pay-01.png.webp" alt="">
+                <img src="/assets/images/icon-pay-02.png.webp" alt="">
+                <img src="/assets/images/icon-pay-03.png.webp" alt="">
+                <img src="/assets/images/icon-pay-04.png.webp" alt="">
+                <img src="/assets/images/icon-pay-05.png.webp" alt="">
+            </div>
+            <p class="copyright">
+                Copyright ©2024 All rights reserved | This template is made with by
+                <i class="fa-regular fa-heart"></i>
+                <span>Colorlib</span>
+            </p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/assets/js/script.js"></script>
     <script src="/assets/js/card.js"></script>
     <script src="/assets/js/slider.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- <script src="/assets/js/checkout.js"></script>
-    <script src="/assets/js/script.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 </body>
 
 </html>

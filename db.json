@@ -7,7 +7,10 @@
         "title": "Esprit Ruffle Shirt",
         "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
         "price": 16.64,
-        "quantity":1
+        "quantity":1,
+        "detail1":"/assets/images/product-detail-01.jpg.webp",
+        "detail2":"/assets/images/product-detail-02.jpg.webp",
+        "detail3":"/assets/images/product-detail-03.jpg.webp"
        },
        {
         "id": 2,
@@ -110,7 +113,7 @@
        },
        {
         "id": 13,
-        "category":"shoes",
+        "category":"women",
         "image":"/assets/images/product-13.jpg.webp",
         "title": "T-Shirt with Sleeve",
         "info": "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.",
